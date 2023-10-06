@@ -1,11 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+
+import { Login } from "./src/screens/Login";
+
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-red-300">
-      <Text>Super mercado</Text>
-      <StatusBar style="auto" />
-    </View>
+    // 👇 Fala pro app onde é a área segura
+    <SafeAreaProvider>
+      {/* 👇 Container do aplicativo */}
+      <View className="flex-1">
+        {/* 👇 Barra de Status */}
+        <StatusBar style="dark" translucent backgroundColor="transparent" />
+
+        {/* 👇 Tela de Login */}
+        <Login />
+      </View>
+    </SafeAreaProvider>
   );
 }
