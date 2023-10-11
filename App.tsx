@@ -1,9 +1,11 @@
+import "react-native-gesture-handler";
+
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 
-import { Login } from "./src/screens/Login";
-
 import { SafeAreaProvider } from "react-native-safe-area-context";
+
+import { Routes } from "./src/routes";
 
 export default function App() {
   return (
@@ -14,8 +16,8 @@ export default function App() {
         {/* 👇 Barra de Status */}
         <StatusBar style="dark" translucent backgroundColor="transparent" />
 
-        {/* 👇 Tela de Login */}
-        <Login />
+        {/* 👇 Rotas do aplicativo */}
+        <Routes />
       </View>
     </SafeAreaProvider>
   );
