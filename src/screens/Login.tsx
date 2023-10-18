@@ -1,11 +1,15 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Logo = "../assets/logomt.png";
 
 export function Login() {
+  const navigation = useNavigation();
+
+  function navegarCompras() {
+    navigation.navigate("compras");
+  }
   return (
     // 👇 Coloca o que tiver dentro em area segura
     <SafeAreaView className="flex-1 bg-slate-50">
@@ -23,25 +27,28 @@ export function Login() {
         <Text className="font-semibold text-xl">Faça seu Login!</Text>
 
         {/* 👇 Container de botões */}
-        <View className="gap-5 items-center">
-          <TouchableOpacity className="bg-[#B9FFB2] items-center justify-center w-[270px]  h-[50px] rounded-2xl">
-            <Text className="font-semibold text-base">entrar </Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="bg-[#B9FFB2]  items-center justify-center w-[270px]  h-[50px] rounded-2xl">
-            <Text className="font-semibold text-base">MartMais</Text>
-          </TouchableOpacity>
+        {/* 👇 email*/}
+        <View className="flex-row gap-3 bg-[#B9FFB2] h-[54] w-[280] rounded-2xl">
+          <Text className="font-semibold text-lg">Email:</Text>
+          <TextInput className="w-[190] pb-3 text-base" />
+        </View>
+
+        {/* 👇 Senha*/}
+        <View className="flex-row gap-3 bg-[#B9FFB2] h-[54] w-[280] rounded-2xl">
+          <Text className="font-semibold text-lg">Senha:</Text>
+          <TextInput className="w-[190] pb-3 text-base" />
         </View>
 
         {/* 👇 Link para a tela de cadastro*/}
-        <TouchableOpacity>
-          <Text className="text-base font-semibold text-[#10C700] pt-6 text-center">
-            Cadastrar
+        <TouchableOpacity onPress={navegarCompras}>
+          <Text className="text-base font-semibold text-[#10C700] pt-6 text-center justify-center">
+            Avançar
           </Text>
         </TouchableOpacity>
-
-        {/* 👇 Barra verde*/}
-        <View className="bg-[#10C700] w-[398] h-[31] flex items-baseline"></View>
       </View>
+
+      {/* 👇 Barra verde*/}
+      <View className="bg-[#10C700] w-full h-[31]"></View>
     </SafeAreaView>
   );
 }
