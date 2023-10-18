@@ -75,6 +75,10 @@ export function Compras() {
           <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#7f1818]">
             <Text>CHURRASCO</Text>
           </View>
+
+          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#f3c041]">
+            <Text>PET SHOP</Text>
+          </View>
         </ScrollView>
       </View>
 
