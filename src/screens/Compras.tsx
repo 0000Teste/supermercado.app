@@ -1,8 +1,9 @@
-import { View, Text, Image, TextInput, ScrollView } from "react-native";
+import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 const Logo = "../assets/logomt.png";
 const iconPesquisa = "../assets/pesquisaicon.png";
+const seta = "../assets/seta.png";
 
 export function Compras() {
   return (
@@ -15,9 +16,7 @@ export function Compras() {
           {/* 👇 Ícone */}
           <Image style={{ width: 51, height: 51 }} source={require(Logo)} />
           {/* 👇 Título */}
-          <Text className="font-semibold text-2xl pt-5 h-20">
-            Martinho de Minas
-          </Text>
+          <Text className="font-semibold text-2xl pt-5 h-20">Martinho de Minas</Text>
         </View>
         {/* 👇 Pesquisa */}
         <View className=" flex-row  gap-7">
@@ -44,14 +43,19 @@ export function Compras() {
       {/* 👇 Categorias */}
       <View>
         <View>
-          <Text className="font-semibold text-3xl pt-5 pl-10">Categorias</Text>
+          <Text className="font-semibold text-3xl pt-5 pl-10 p-9">Categorias</Text>
         </View>
       </View>
 
       {/* 👇 Blocos categorias */}
       <View className="flex-row">
         {/* 👇 Hortifruti*/}
-        <ScrollView horizontal className="gap-10 pl-5 pr-2">
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingHorizontal: 30 }}
+          className="gap-10"
+        >
           <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#62E951] ">
             <Text>HORTIFRUTI</Text>
           </View>
@@ -81,6 +85,24 @@ export function Compras() {
           </View>
         </ScrollView>
       </View>
+
+      <View className="items-end p-3">
+        <TouchableOpacity>
+          <Image
+            style={{ width: 40, height: 40, justifyContent: "center" }}
+            source={require(seta)}
+          />
+        </TouchableOpacity>
+      </View>
+
+      {/* 👇 Lista */}
+      <View>
+        <View>
+          <Text className="font-semibold text-3xl pt-5 pl-10 p-9">Lista</Text>
+        </View>
+      </View>
+
+      <View></View>
 
       {/* 👇 Menu verde*/}
     </SafeAreaView>
