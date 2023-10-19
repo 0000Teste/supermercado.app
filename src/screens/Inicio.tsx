@@ -2,11 +2,12 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
+import { AuthNavigationRoutesProps } from "../routes/auth.routes";
 
 const Logo = "../assets/logomt.png";
 
 export function Inicio() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthNavigationRoutesProps>();
 
   function navegarCadastro() {
     navigation.navigate("cadastro");
@@ -15,25 +16,25 @@ export function Inicio() {
     // 👇 Coloca o que tiver dentro em area segura
     <SafeAreaView className="flex-1 bg-slate-50">
       {/* 👇 Cabeçalho */}
-      <View className="items-center justify-center flex-row pt-5 gap-1">
+      <View className="flex-row items-center justify-center gap-1 pt-5">
         {/* 👇 Ícone */}
         <Image style={{ width: 51, height: 51 }} source={require(Logo)} />
         {/* 👇 Título */}
-        <Text className="font-bold text-2xl pt-5 h-20">Martinho de Minas</Text>
+        <Text className="h-20 pt-5 text-2xl font-bold">Martinho de Minas</Text>
       </View>
 
       {/* 👇 Conteúdo */}
       <View className="flex-1 items-center justify-center gap-6">
         {/* 👇 Texto de login */}
-        <Text className="font-semibold text-xl">Faça seu Login!</Text>
+        <Text className="text-xl font-semibold">Faça seu Login!</Text>
 
         {/* 👇 Container de botões */}
-        <View className="gap-5 items-center">
-          <TouchableOpacity className="bg-[#B9FFB2] items-center justify-center w-[270px]  h-[50px] rounded-2xl">
-            <Text className="font-semibold text-base">entrar com Google</Text>
+        <View className="items-center gap-5">
+          <TouchableOpacity className="h-[50px] w-[270px] items-center justify-center  rounded-2xl bg-[#B9FFB2]">
+            <Text className="text-base font-semibold">entrar com Google</Text>
           </TouchableOpacity>
-          <TouchableOpacity className="bg-[#B9FFB2]  items-center justify-center w-[270px]  h-[50px] rounded-2xl">
-            <Text className="font-semibold text-base">
+          <TouchableOpacity className="h-[50px]  w-[270px] items-center justify-center  rounded-2xl bg-[#B9FFB2]">
+            <Text className="text-base font-semibold">
               sou cliente MartMais
             </Text>
           </TouchableOpacity>
@@ -41,7 +42,7 @@ export function Inicio() {
 
         {/* 👇 Link para a tela de cadastro*/}
         <TouchableOpacity onPress={navegarCadastro}>
-          <Text className="text-base font-semibold text-[#10C700] pt-6 text-center">
+          <Text className="pt-6 text-center text-base font-semibold text-[#10C700]">
             Cadastrar
           </Text>
         </TouchableOpacity>
@@ -49,7 +50,7 @@ export function Inicio() {
         {/* 👇 Barra verde*/}
       </View>
 
-      <View className="bg-[#10C700] w-full h-[31]"></View>
+      <View className="h-[31] w-full bg-[#10C700]"></View>
     </SafeAreaView>
   );
 }

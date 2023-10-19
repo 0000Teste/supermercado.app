@@ -18,18 +18,18 @@ export function Compras() {
       {/* 👇 Cabeçalho + Pesquisa*/}
       <View className="pl-12">
         {/* 👇 Cabeçalho */}
-        <View className="items-center justify-start flex-row pt-5 gap-1">
+        <View className="flex-row items-center justify-start gap-1 pt-5">
           {/* 👇 Ícone */}
           <Image style={{ width: 51, height: 51 }} source={require(Logo)} />
           {/* 👇 Título */}
-          <Text className="font-semibold text-2xl pt-5 h-20">
+          <Text className="h-20 pt-5 text-2xl font-semibold">
             Martinho de Minas
           </Text>
         </View>
         {/* 👇 Pesquisa */}
         <View className=" flex-row  gap-7">
           <View
-            className="bg-[#FF9C9C] h-[56] w-[57] rounded-full"
+            className="h-[56] w-[57] rounded-full bg-[#FF9C9C]"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -43,15 +43,15 @@ export function Compras() {
             />
           </View>
           {/* 👇 Input pesquisa */}
-          <View className="bg-[#B9FFB2] h-[56] w-[216] rounded-full">
-            <TextInput className="w-[225] pb-3 text-base justify-center items-center p-5" />
+          <View className="h-[56] w-[216] rounded-full bg-[#B9FFB2]">
+            <TextInput className="w-[225] items-center justify-center p-5 pb-3 text-base" />
           </View>
         </View>
       </View>
       {/* 👇 Categorias */}
       <View>
         <View>
-          <Text className="font-semibold text-3xl pt-5 pl-10 p-9">
+          <Text className="p-9 pl-10 pt-5 text-3xl font-semibold">
             Categorias
           </Text>
         </View>
@@ -65,31 +65,31 @@ export function Compras() {
           contentContainerStyle={{ paddingHorizontal: 30 }}
           className="gap-10"
         >
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#62E951] ">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#62E951] ">
             <Text>HORTIFRUTI</Text>
           </View>
 
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#F1A225]">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#F1A225]">
             <Text>PADARIA</Text>
           </View>
 
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#F00]">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#F00]">
             <Text>AÇOUGUE</Text>
           </View>
 
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#60ecf6]">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#60ecf6]">
             <Text>FRIOS</Text>
           </View>
 
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#f2a06e]">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#f2a06e]">
             <Text>BÁSICOS</Text>
           </View>
 
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#7f1818]">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#7f1818]">
             <Text>CHURRASCO</Text>
           </View>
 
-          <View className="w-[123] h-[122] items-center justify-center rounded-3xl bg-[#f3c041]">
+          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#f3c041]">
             <Text>PET SHOP</Text>
           </View>
         </ScrollView>
@@ -107,7 +107,7 @@ export function Compras() {
       {/* 👇 Lista */}
       <View>
         <View>
-          <Text className="font-semibold text-3xl pt-5 pl-10 p-9">Lista</Text>
+          <Text className="p-9 pl-10 pt-5 text-3xl font-semibold">Lista</Text>
         </View>
       </View>
 
