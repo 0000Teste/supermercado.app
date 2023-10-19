@@ -1,6 +1,12 @@
-import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
 const Logo = "../assets/logomt.png";
 const iconPesquisa = "../assets/pesquisaicon.png";
 const seta = "../assets/seta.png";
@@ -16,7 +22,9 @@ export function Compras() {
           {/* 👇 Ícone */}
           <Image style={{ width: 51, height: 51 }} source={require(Logo)} />
           {/* 👇 Título */}
-          <Text className="font-semibold text-2xl pt-5 h-20">Martinho de Minas</Text>
+          <Text className="font-semibold text-2xl pt-5 h-20">
+            Martinho de Minas
+          </Text>
         </View>
         {/* 👇 Pesquisa */}
         <View className=" flex-row  gap-7">
@@ -43,7 +51,9 @@ export function Compras() {
       {/* 👇 Categorias */}
       <View>
         <View>
-          <Text className="font-semibold text-3xl pt-5 pl-10 p-9">Categorias</Text>
+          <Text className="font-semibold text-3xl pt-5 pl-10 p-9">
+            Categorias
+          </Text>
         </View>
       </View>
       {/* 👇 Blocos categorias */}
