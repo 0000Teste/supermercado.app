@@ -47,7 +47,6 @@ export function Compras() {
           <Text className="font-semibold text-3xl pt-5 pl-10">Categorias</Text>
         </View>
       </View>
-
       {/* 👇 Blocos categorias */}
       <View className="flex-row">
         {/* 👇 Hortifruti*/}
