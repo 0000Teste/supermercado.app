@@ -5,6 +5,7 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Logo = "../assets/logomt.png";
@@ -12,6 +13,18 @@ const iconPesquisa = "../assets/pesquisaicon.png";
 const seta = "../assets/seta.png";
 
 export function Compras() {
+  const categories = [
+    {
+      id: "1",
+      name: "basicos"
+    },
+    {
+      id: "1",
+      name: "frios"
+    }
+  ]
+
+
   return (
     // 👇 Coloca o que tiver dentro em area segura
     <SafeAreaView className="flex-1 bg-slate-50">
@@ -59,40 +72,7 @@ export function Compras() {
       {/* 👇 Blocos categorias */}
       <View className="flex-row">
         {/* 👇 Hortifruti*/}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ paddingHorizontal: 30 }}
-          className="gap-10"
-        >
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#62E951] ">
-            <Text>HORTIFRUTI</Text>
-          </View>
-
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#F1A225]">
-            <Text>PADARIA</Text>
-          </View>
-
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#F00]">
-            <Text>AÇOUGUE</Text>
-          </View>
-
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#60ecf6]">
-            <Text>FRIOS</Text>
-          </View>
-
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#f2a06e]">
-            <Text>BÁSICOS</Text>
-          </View>
-
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#7f1818]">
-            <Text>CHURRASCO</Text>
-          </View>
-
-          <View className="h-[122] w-[123] items-center justify-center rounded-3xl bg-[#f3c041]">
-            <Text>PET SHOP</Text>
-          </View>
-        </ScrollView>
+      <FlatList horizontal showsHorizontalScrollIndicator={false}  data={categories} renderItem={({item}) => <CategoryItem category={item.name} />} keyExtractor={(item) =>  item.id} />
       </View>
 
       <View className="items-end p-3">
@@ -116,4 +96,10 @@ export function Compras() {
       {/* 👇 Menu verde*/}
     </SafeAreaView>
   );
+}
+
+function CategoryItem({category}:{category: string}){
+  return (
+    <Text className="items-center justify-center w-20 h-20 bg-red-500">{category}</Text>
+  )
 }
